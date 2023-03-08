@@ -1,7 +1,9 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class TextBasedAdventure {
     boolean hasCandyCane = false;
+    boolean hasHammer = false;
     Scanner keyboardInput = new Scanner(System.in);
 
     public void execute() {
@@ -12,6 +14,7 @@ public class TextBasedAdventure {
     }
 
     public void start() {
+        chanceToExplode();
         System.out.println("You find yourself in a large room. What would you like to do?\n1. Go left \n2. Go right");
         int input = keyboardInput.nextInt();
         if (input == 1) {
@@ -23,6 +26,7 @@ public class TextBasedAdventure {
     }
 
     public void goLeft() {
+        chanceToExplode();
         System.out.println("Oh no! You run into a giant! Fight or flight?\n1. Fight \n2. Flight");
         int input = keyboardInput.nextInt();
         if (input == 1) {
@@ -34,9 +38,11 @@ public class TextBasedAdventure {
     }
 
     public void goRight() {
-        if (!hasCandyCane) {
-            System.out.println("You find a candy cane on the ground!");
+        chanceToExplode();
+        if (!hasCandyCane || !hasHammer) {
+            System.out.println("You find a candy cane and a hammer on the ground!");
             hasCandyCane = true;
+            hasHammer = true;
         }
         else {
             System.out.println("There's nothing here...");
@@ -45,10 +51,22 @@ public class TextBasedAdventure {
     }
 
     public void fight() {
-        if (hasCandyCane) {
-            System.out.println("You defeat the giant with your candy cane and run out of the cave!");
+        chanceToExplode();
+        if (hasCandyCane || hasHammer) {
+            System.out.println("You defeat the giant with your weapon and run out of the cave!");
         } else {
             System.out.println("You get stomped by the giant and red stuff goes everywhere.");
+            
+            
+        }
+    }
+
+    public void chanceToExplode() {
+        Random rand = new Random();
+        int chanceToExplode = 100;
+        if (chanceToExplode == 420) {
+            System.out.println("You spontaniously exploded! Get well soon!");
+            System.exit(0);
         }
     }
 
