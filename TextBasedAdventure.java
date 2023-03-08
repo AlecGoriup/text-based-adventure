@@ -40,15 +40,21 @@ public class TextBasedAdventure {
     public void goRight() {
         chanceToExplode();
         if (!hasSword || !hasHammer) {
-            System.out.println("You find a sword on the ground!");
-            hasSword = true;
-            hasHammer = true;
-        }
-        else {
+            System.out.println("You find a sword and a hammer on the ground! Which would you like?");
+            String input = keyboardInput.nextLine();
+            if (input.equals("sword")) {
+                hasSword = true;
+            } else if (input.equals("hammer")) {
+                hasHammer = true;
+            } else {
+                System.out.println("Invalid input.");
+            }
+        } else {
             System.out.println("There's nothing here...");
         }
         start();
     }
+    
 
     public void fight() {
         chanceToExplode();
