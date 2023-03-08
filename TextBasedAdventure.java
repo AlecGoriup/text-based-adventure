@@ -46,7 +46,7 @@ public class TextBasedAdventure {
             } else if (input.equals("hammer")) {
                 hasHammer = true;
             } else {
-                System.out.println("Invalid input.");
+                System.out.println("Please choose either sword or hammer");
             }
         } else {
             System.out.println("There's nothing here...");
