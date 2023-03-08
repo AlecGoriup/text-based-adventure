@@ -63,7 +63,7 @@ public class TextBasedAdventure {
 
     public void chanceToExplode() {
         Random rand = new Random();
-        int chanceToExplode = 100;
+        int chanceToExplode = rand.nextInt(1000 - 1) + 1;
         if (chanceToExplode == 420) {
             System.out.println("You spontaniously exploded! Get well soon!");
             System.exit(0);
