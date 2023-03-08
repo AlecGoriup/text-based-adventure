@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class TextBasedAdventure {
-    boolean hasSword = false;
+    boolean hasCandyCane = false;
     Scanner keyboardInput = new Scanner(System.in);
 
     public void execute() {
@@ -34,9 +34,9 @@ public class TextBasedAdventure {
     }
 
     public void goRight() {
-        if (!hasSword) {
-            System.out.println("You find a sword on the ground!");
-            hasSword = true;
+        if (!hasCandyCane) {
+            System.out.println("You find a candy cane on the ground!");
+            hasCandyCane = true;
         }
         else {
             System.out.println("There's nothing here...");
@@ -45,8 +45,8 @@ public class TextBasedAdventure {
     }
 
     public void fight() {
-        if (hasSword) {
-            System.out.println("You defeat the giant with your sword and run out of the cave!");
+        if (hasCandyCane) {
+            System.out.println("You defeat the giant with your candy cane and run out of the cave!");
         } else {
             System.out.println("You get stomped by the giant and red stuff goes everywhere.");
         }
