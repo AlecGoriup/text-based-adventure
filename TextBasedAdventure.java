@@ -15,17 +15,17 @@ public class TextBasedAdventure {
 
     public void start() {
         chanceToExplode();
-        System.out.println("You find yourself in a large room. What would you like to do?\n1. Go left \n2. Go right");
+        System.out.println("You find yourself in a showroom. What would you like to do?\n1. Go up the esculator \n2. Go down the esculator");
         int input = keyboardInput.nextInt();
         if (input == 1) {
-            goLeft();
+            goUp();
         }
         else if (input == 2) {
-            goRight();
+            goDown();
         }
     }
 
-    public void goLeft() {
+    public void goUp() {
         chanceToExplode();
         System.out.println("Oh no! You run into a giant! Fight or flight?\n1. Fight \n2. Flight");
         int input = keyboardInput.nextInt();
@@ -36,7 +36,8 @@ public class TextBasedAdventure {
             start();
         }  
     }
-    public void goRight() {
+
+    public void goDown() {
         chanceToExplode();
         if (!hasCandyCane || !hasHammer) {
             System.out.println("You find a sword and a hammer on the ground! Which would you like?");
