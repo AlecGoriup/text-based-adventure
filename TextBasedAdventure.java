@@ -36,20 +36,23 @@ public class TextBasedAdventure {
             start();
         }  
     }
-
     public void goRight() {
         chanceToExplode();
         if (!hasCandyCane || !hasHammer) {
-            System.out.println("You find a candy cane and a hammer on the ground!");
-            hasCandyCane = true;
-            hasHammer = true;
-        }
-        else {
+            System.out.println("You find a sword and a hammer on the ground! Which would you like?");
+            String input = keyboardInput.nextLine();
+            if (input.equals("sword")) {
+                hasCandyCane = true;
+            } else if (input.equals("hammer")) {
+                hasHammer = true;
+            } else {
+                System.out.println("Invalid input.");
+            }
+        } else {
             System.out.println("There's nothing here...");
         }
         start();
     }
-
     public void fight() {
         chanceToExplode();
         if (hasCandyCane || hasHammer) {
