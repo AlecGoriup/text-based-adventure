@@ -60,6 +60,7 @@ public class TextBasedAdventure {
 
     public void goForward() {
         System.out.println("You found the exit!!!");
+        System.out.println("Well done! You are the luckiest adventurer ever!!!");
     }
 
     public void fight() {
