@@ -7,9 +7,9 @@ public class TextBasedAdventure {
     Scanner keyboardInput = new Scanner(System.in);
 
     public void execute() {
-        System.out.println("Welcome to Escape from the Cave! Press enter when you are ready to start...");
+        System.out.println("Welcome to Escape from Ikea! Press enter when you are ready to start...");
         keyboardInput.nextLine();
-        System.out.println("You are trapped in a cave!");
+        System.out.println("You are trapped in a Ikea!");
         start();
     }
 
@@ -53,7 +53,7 @@ public class TextBasedAdventure {
     public void fight() {
         chanceToExplode();
         if (hasCandyCane || hasHammer) {
-            System.out.println("You defeat the giant with your weapon and run out of the cave!");
+            System.out.println("You defeat the giant with your weapon and run out of the Ikea!");
         } else {
             System.out.println("You get stomped by the giant and red stuff goes everywhere.");
             
