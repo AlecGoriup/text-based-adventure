@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class TextBasedAdventure {
-    boolean hasSword = false;
+    boolean hasCandyCane = false;
     boolean hasHammer = false;
     Scanner keyboardInput = new Scanner(System.in);
 
@@ -39,9 +39,9 @@ public class TextBasedAdventure {
 
     public void goRight() {
         chanceToExplode();
-        if (!hasSword || !hasHammer) {
-            System.out.println("You find a sword on the ground!");
-            hasSword = true;
+        if (!hasCandyCane || !hasHammer) {
+            System.out.println("You find a candy cane and a hammer on the ground!");
+            hasCandyCane = true;
             hasHammer = true;
         }
         else {
@@ -52,7 +52,7 @@ public class TextBasedAdventure {
 
     public void fight() {
         chanceToExplode();
-        if (hasSword || hasHammer) {
+        if (hasCandyCane || hasHammer) {
             System.out.println("You defeat the giant with your weapon and run out of the cave!");
         } else {
             System.out.println("You get stomped by the giant and red stuff goes everywhere.");
@@ -63,7 +63,7 @@ public class TextBasedAdventure {
 
     public void chanceToExplode() {
         Random rand = new Random();
-        int chanceToExplode = rand.nextInt(0, 10000);
+        int chanceToExplode = 100;
         if (chanceToExplode == 420) {
             System.out.println("You spontaniously exploded! Get well soon!");
             System.exit(0);
