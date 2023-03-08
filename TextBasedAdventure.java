@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class TextBasedAdventure {
     boolean hasSword = false;
+    boolean hasHammer = false;
     Scanner keyboardInput = new Scanner(System.in);
 
     public void execute() {
@@ -38,9 +39,10 @@ public class TextBasedAdventure {
 
     public void goRight() {
         chanceToExplode();
-        if (!hasSword) {
+        if (!hasSword || !hasHammer) {
             System.out.println("You find a sword on the ground!");
             hasSword = true;
+            hasHammer = true;
         }
         else {
             System.out.println("There's nothing here...");
@@ -50,10 +52,12 @@ public class TextBasedAdventure {
 
     public void fight() {
         chanceToExplode();
-        if (hasSword) {
-            System.out.println("You defeat the giant with your sword and run out of the cave!");
+        if (hasSword || hasHammer) {
+            System.out.println("You defeat the giant with your weapon and run out of the cave!");
         } else {
             System.out.println("You get stomped by the giant and red stuff goes everywhere.");
+            
+            
         }
     }
 
