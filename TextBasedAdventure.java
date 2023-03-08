@@ -15,19 +15,19 @@ public class TextBasedAdventure {
 
     public void start() {
         chanceToExplode();
-        System.out.println("You find yourself in a showroom. What would you like to do?\n1. Go up the esculator \n2. Go down the esculator");
+        System.out.println("You find yourself in a large room. What would you like to do?\n1. Go left \n2. Go right");
         int input = keyboardInput.nextInt();
         if (input == 1) {
-            goUp();
+            goLeft();
         }
         else if (input == 2) {
-            goDown();
+            goRight();
         }
     }
 
-    public void goUp() {
+    public void goLeft() {
         chanceToExplode();
-        System.out.println("Oh no! You run into a giant! Fight or flight?\n1. Fight \n2. Flight");
+        System.out.println("Oh no! You run into a manager! Fight or flight?\n1. Fight \n2. Flight");
         int input = keyboardInput.nextInt();
         if (input == 1) {
             fight();
@@ -37,29 +37,25 @@ public class TextBasedAdventure {
         }  
     }
 
-    public void goDown() {
+    public void goRight() {
         chanceToExplode();
         if (!hasCandyCane || !hasHammer) {
-            System.out.println("You find a sword and a hammer on the ground! Which would you like?");
-            String input = keyboardInput.nextLine();
-            if (input.equals("sword")) {
-                hasCandyCane = true;
-            } else if (input.equals("hammer")) {
-                hasHammer = true;
-            } else {
-                System.out.println("Please choose either sword or hammer");
-            }
-        } else {
+            System.out.println("You find a candy cane and a hammer on the ground!");
+            hasCandyCane = true;
+            hasHammer = true;
+        }
+        else {
             System.out.println("There's nothing here...");
         }
         start();
     }
+
     public void fight() {
         chanceToExplode();
         if (hasCandyCane || hasHammer) {
-            System.out.println("You defeat the giant with your weapon and run out of the Ikea!");
+            System.out.println("You defeat the manager with your weapon and run out of the Ikea!");
         } else {
-            System.out.println("You get stomped by the giant and red stuff goes everywhere.");
+            System.out.println("You get stomped by the manager and red stuff goes everywhere.");
             
             
         }
