@@ -14,14 +14,21 @@ public class TextBasedAdventure {
     }
 
     public void start() {
+
         chanceToExplode();
-        System.out.println("You find yourself in a large room. What would you like to do?\n1. Go left \n2. Go right");
+
+        System.out.println("You find yourself in a showroom. What would you like to do?\n1. Go up the esculator \n2. Go down the esculator \n3. Go forward");
+
         int input = keyboardInput.nextInt();
         if (input == 1) {
             goLeft();
         }
         else if (input == 2) {
             goRight();
+        }
+
+        else if (input == 3) {
+            goForward();
         }
     }
 
@@ -48,6 +55,11 @@ public class TextBasedAdventure {
             System.out.println("There's nothing here...");
         }
         start();
+    }
+
+
+    public void goForward() {
+        System.out.println("You found the exit!!!");
     }
 
     public void fight() {
